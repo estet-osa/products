@@ -1,0 +1,295 @@
+.products{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0 100px 0;
+}
+table#data_table > tbody > tr.selected{
+    background: #FAEBCC;
+}
+table#data_table > tbody > tr > td{
+    border: none;
+    padding: 10px 0.75rem !important;
+}
+.table_tools_wrp {
+    float: left;
+    min-height: 30px;
+}
+.table_tools_wrp > button{
+    padding: 0 20px;
+    height: 40px;
+    display: inline-block;
+    cursor: default;
+    border: #DCDCDC solid 1px;
+    outline: none;
+    margin: 0 8px 15px 0;
+    color: #888;
+    background: transparent;
+    font-weight: 500;
+    font-size: 15px;
+
+-webkit-transition: all 0.15s ease-in-out;
+-moz-transition: all 0.15s ease-in-out;
+-ms-transition: all 0.15s ease-in-out;
+-o-transition: all 0.15s ease-in-out;
+transition: all 0.15s ease-in-out;
+}
+.table_tools_wrp > button:hover{
+    border: #777 solid 1px;
+    color: #333;
+}
+.table_tools_wrp > button.active{
+    cursor: pointer;
+    color: #333;
+    background: #FAEBCC;
+}
+button.product_edit{
+    display: block;
+    background: transparent;
+    border: none;
+    height: auto;
+    width: auto;
+    margin: 2px 0 0 0;
+    color: #337ab7;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+button.product_edit:hover{text-decoration: underline}
+
+#data_table_filter{display: none}
+
+/*=== modal ===*/
+.product_modal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    z-index: 100;
+    display: none;
+    background: rgba(0, 0, 0, 0.8);
+}
+.product_modal > .inner{
+    max-width: 550px;
+    min-height: 150px;
+    position: relative;
+    z-index: 10000000;
+    background: #FFF;
+    top: 50px;
+    margin: 50px auto 100px;
+}
+
+/*=== modal form ===*/
+.product_modal > .inner > .title{
+    width: 100%;
+    height: 55px;
+    margin: 0 0 10px 0;
+    border-bottom: #DDD solid 1px;
+}
+.product_modal > .inner > .title .intro{
+    margin: 17px 0 0 20px;
+    color: #444;
+    font-size: 17px;
+    font-weight: 600;
+    float: left;
+}
+.product_modal > .inner > .title .close_modal{
+    width: 40px;
+    height: 30px;
+    margin: 13px 10px;
+    text-align: center;
+    float: right;
+    opacity: 0.6;
+    line-height: 30px;
+    cursor: pointer;
+}
+.product_modal > .inner > .title .close_modal:hover{opacity: 1}
+
+.product_modal > .inner > .title .close_modal > img{
+    text-align: center;
+    vertical-align: middle;
+}
+.field_modal_form {
+    position: relative;
+    padding: 20px 0 0px;
+    margin: 0 30px;
+}
+label.modal_label{
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+    margin: 0 0 0 0;
+}
+label.modal_label span.hlp{
+    color: #999;
+    font-weight: 400;
+}
+input.modal_inpt_text:focus + span.brd:after{
+    width: 100%;
+}
+label.modal_label > span.fa{
+    font-size: 18px;
+}
+label.modal_label_err{
+    color: #D3544E;
+}
+input.modal_inpt_text{
+    width: 98%;
+    height: 38px;
+    display: block;
+    padding: 0 1%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+}
+.field_modal_form span.brd{
+    display: inline-block;
+    width: auto;
+    height: 1px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    background: #E5E5E5;
+}
+.field_modal_form span.brd:after{
+    content: '';
+    height: 2px;
+    display: block;
+    width: 0;
+    background: #D0D0D0;
+    margin: 0 auto;
+
+-webkit-transition: width 0.2s ease-in-out;
+-moz-transition: width 0.2s ease-in-out;
+-ms-transition: width 0.2s ease-in-out;
+-o-transition: width 0.2s ease-in-out;
+transition: width 0.2s ease-in-out;
+}
+.field_modal_form > textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 10px 2%;
+    margin: 10px 0 0 0;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+    resize: vertical;
+    border: #E0E0E0 solid 1px;
+}
+.modal_save_btns_wrp {
+    padding: 30px 0;
+    background: #FFF;
+}
+.modal_save_btns_wrp > button.btn{
+    padding: 0 20px;
+    height: 38px;
+    border: #CCC solid 1px;
+    font-size: 14px;
+    outline: none;
+    margin: 0 0 0 25px;
+    background: #FFF;
+    font-weight: 400;
+    color: #555;
+    cursor: pointer;
+
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+}
+.modal_save_btns_wrp > button.btn:hover{
+    border: #333 solid 1px;
+    color: #000;
+}
+.modal_save_btns_wrp > button.cancel{margin: 0 0 0 15px}
+
+/*=== dataTables pagination ===*/
+.dataTables_paginate{
+    float: right;
+}
+.dataTables_paginate > span{
+    #float: left;
+    display: inline-block;
+    #margin: 0 10px;
+}
+.dataTables_paginate > span > a{
+    display: inline-block;
+    min-width: 35px;
+    text-align: center;
+    line-height: 35px;
+    vertical-align: middle;
+    font-size: 13px;
+    font-weight: 500;
+    height: 35px;
+    cursor: pointer;
+    overflow: hidden;
+    border-top: #E0E0DE solid 1px;
+    border-bottom: #E0E0DE solid 1px;
+    border-left: #E0E0DE solid 1px;
+}
+.dataTables_paginate > span > a.current{
+    background: #F5F5F5;
+}
+.dataTables_paginate > span > a:last-child{
+    border-right: #E0E0DE solid 1px;
+}
+.dataTables_paginate > span > a:hover{
+    border-left: #ACACAA solid 1px;
+    border-top: #ACACAA solid 1px;
+    border-bottom: #ACACAA solid 1px;
+}
+.dataTables_paginate > span a:hover + a{border-left: #ACACAA solid 1px}
+.dataTables_paginate > span > a:hover:last-child{border-right: #ACACAA solid 1px}
+
+.bottom a.first{
+    display: inline-block;
+    margin: 0 15px 0 0;
+    font-size: 15px;
+    cursor: pointer;
+}
+.bottom a.last{
+    display: inline-block;
+    margin: 0 0 0 15px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.bottom a.next{
+    display: inline-block;
+    min-width: 35px;
+    text-align: center;
+    line-height: 35px;
+    vertical-align: middle;
+    font-size: 13px;
+    font-weight: 500;
+    height: 35px;
+    cursor: pointer;
+    overflow: hidden;
+    border-top: #E0E0DE solid 1px;
+    border-bottom: #E0E0DE solid 1px;
+    border-right: #E0E0DE solid 1px;
+}
+.bottom a.previous{
+    display: inline-block;
+    min-width: 35px;
+    text-align: center;
+    line-height: 35px;
+    vertical-align: middle;
+    font-size: 13px;
+    font-weight: 500;
+    height: 35px;
+    cursor: pointer;
+    overflow: hidden;
+    border-top: #E0E0DE solid 1px;
+    border-bottom: #E0E0DE solid 1px;
+    border-left: #E0E0DE solid 1px;
+}
+.bottom a.previous, .bottom a.next{
+    font-size: 16px;
+}
+.bottom a.previous:hover, a.next:hover{background: #F5F5F5}
